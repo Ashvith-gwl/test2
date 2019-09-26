@@ -11,6 +11,7 @@ class Card extends Component{
 
     // let type = names.items;
     console.log(data.color)
+    let color = data.color
 
     // console.log(this.props.childern,"text");
 
@@ -23,7 +24,7 @@ class Card extends Component{
       )
     
     return (
-        <div className="card" >
+        <div className="card" style={{ color: color}} >
             <div className="cardsinner">
               <h2>{data.label} </h2>  
             {children}
