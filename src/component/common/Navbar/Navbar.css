@@ -13,6 +13,6 @@
     font-size: 17px;
   }
   .active{
-      background: #333333;
-      color:#008CBA;
+      background: #ffffff;
+      color:#008CBA !important;
   }

@@ -10,7 +10,7 @@ let data = props.data;
     <div>
          {data.cards.map((items, Index) => {
            return(
-             <div className='card'>
+             <div className='card' style={{ color: items.color}}>
                {items.label} 
               </div>
            )

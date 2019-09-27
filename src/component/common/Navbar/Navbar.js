@@ -12,8 +12,8 @@ function Header(props) {
     return (
         <div>
         <div className="topnav">
-            <NavLink    to="/" >Home</NavLink >
-            <NavLink  to="/register"  >register</NavLink >
+            <NavLink exact   to="/" >Home</NavLink >
+            <NavLink exact to="/register"  >register</NavLink >
         </div>
         </div>
     );
