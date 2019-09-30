@@ -6,15 +6,15 @@ import Cards from './common/Card/Cards'
 import Button from './common/Button/Button'
 import Radio from './common/Radiobtn/Radio'
 import Textfield from "./common/Textfield/Textfield";
-import Hoc from './hoc/Hoc'
 
 
-class Home extends Component {
 
+class Flexi extends Component {
   render() {
 
-    let { home, handleChange,submitfield } = this.props;
-    let { items } = home;
+    let {items, handleChange,submitfield } = this.props;
+//   console.log(items,"flexi");
+  
     // console.log(items);
 
     const RenderField = items => {
@@ -72,4 +72,4 @@ class Home extends Component {
   }
 }
 
-export default Hoc()(Home);
+export default Flexi;

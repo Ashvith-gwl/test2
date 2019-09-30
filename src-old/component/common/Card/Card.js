@@ -10,7 +10,7 @@ class Card extends Component{
     let data = this.props.data;
 
     // let type = names.items;
-    console.log(data.color)
+    // console.log(data.color)
     let color = data.color
 
     // console.log(this.props.childern,"text");
