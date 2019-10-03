@@ -2,51 +2,56 @@ import React,{Component} from "react";
 
 import Navbar from '../UIComponents/Allcomponents/Navbar/Navbar'
 
-const Hoc =(config) => Component => {
-// console.log(config,"hoc");
+const Hoc =() => Component => {
 class HocComponent extends Component{
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-           
-            value1:{}
+        state = {
+            value1:{},
+            getUrl:false
         }
-    }
 
 
     handleChange = (event) => {
         let {value1}=this.state;
         const { name, value } = event.target
-        // console.log(name,value);
         this.setState({
             value1 :{
                 ...value1,
                 [name]: value,
             }
-        })
-        // console.log(this.state.value1,"ans");
-    }
+        });
+    };
 
     submitfield = (e) => {
         e.preventDefault();
         console.log(this.state.value1)
-        // this.props.onFlexiSubmit(this.state)
     }
 
-    render(){
 
-        // const {flexConfigForHome,flexConfigForRegistration} = this.state;
-        
-       
-  
-    
+    componentDidMount(){
+           const {match}=this.props;
+           console.log(match);
+            const {params}= match;
+            const loc = params.path
+            console.log(loc);
+             let config = require(`../UIConfig/Screen/Specs/${loc}`).default;
+             console.log(config,"path");
+             this.setState({
+               config,
+               getUrl:true
+             })
+             console.log(this.state);
+             
+      };
+
+    render(){
     return (
         <div >
             <Navbar />
-               <Component config={config} handleChange={this.handleChange} submitfield={this.submitfield}
+            {this.state.getUrl?
+               <Component config={this.state.config} handleChange={this.handleChange} submitfield={this.submitfield}
                {...this.props}   />
+               :null}
         </div>
     );
 }}

@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import Home from '../../UIConfig/Screen/Specs/Home'
-import Register from '../../UIConfig/Screen/Specs/Register'
+import Screenhoc from '../../UIPages/Screenhoc';
+
 
 
 function Routes() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route exact path="/" component={Home} />
-        <Route path="/register" component={Register} />
+      <Route exact path={"/screen-interface/:path"} component={Screenhoc} />
       </div>
     </BrowserRouter>
   );

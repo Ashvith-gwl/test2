@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink } from 'react-router-dom'
+import {BrowserRouter, Link } from 'react-router-dom'
 import './Navbar.css'
 
 function Header(props) {
@@ -10,12 +10,14 @@ function Header(props) {
     
 
     return (
-        <div>
+        <BrowserRouter>
         <div className="topnav">
-            <NavLink exact   to="/" >Home</NavLink >
-            <NavLink exact to="/register"  >register</NavLink >
+            {/* <Link exact   to="/screen-interface/home" >Home</Link >
+            <Link exact to="/screen-interface/register"  >register</Link > */}
+            <a    href="/screen-interface/home" >Home</a >
+            <a  href="/screen-interface/register"  >register</a >
         </div>
-        </div>
+        </ BrowserRouter>
     );
 }
 
